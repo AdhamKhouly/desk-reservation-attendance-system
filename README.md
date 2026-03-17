@@ -5,7 +5,9 @@
 ![SharePoint](https://img.shields.io/badge/Data-SharePoint-orange)
 ![License](https://img.shields.io/badge/License-MIT-lightgrey)
 
-A scalable, rule-driven workspace management system built using **Microsoft Power Apps, SharePoint, and Power Automate**, designed to solve real-world office overcrowding while enforcing **fair usage, attendance accountability, and system integrity**.
+A scalable, rule-driven workspace management system built using **Microsoft Power Apps, SharePoint, and Power Automate**.
+
+Designed and deployed to manage **120+ desks across 3 floors**, enforce fair usage, eliminate no-shows, and maintain performance at scale.
 
 ---
 
@@ -24,7 +26,7 @@ As teams rapidly scaled, office capacity became a bottleneck:
 
 ## 💡 The Solution
 
-I designed and built a **full end-to-end system** that:
+I designed and built a **complete end-to-end system** that:
 
 - Digitizes desk reservations across multiple floors  
 - Enforces strict booking and fairness rules  
@@ -36,7 +38,7 @@ I designed and built a **full end-to-end system** that:
 
 ## ⚙️ System Overview
 
-The system manages the complete lifecycle:
+The system manages the full lifecycle:
 
 1. Users browse floors and desks  
 2. Users reserve desks based on rules  
@@ -206,13 +208,15 @@ This is not just a Power Apps project — it demonstrates:
 
 - Analytics Specialist @ Nestlé  
 - Building scalable systems using Power Platform, data, and automation  
+- Passionate about solving real-world operational problems  
+
 ---
 
 ## 📄 License
 
 This project is licensed under the MIT License.
 
-See the `LICENSE.txt` file for details.
+See the `LICENSE` file for details.
 
 ---
 
