@@ -11,36 +11,36 @@ A scalable, rule-driven workspace management system built using **Microsoft Powe
 
 ## 🚨 The Problem
 
-As teams scaled and hiring increased, office space became constrained:
+As teams rapidly scaled, office capacity became a bottleneck:
 
 - Desks were overbooked  
 - Employees reserved desks but didn’t show up  
 - No visibility into actual usage  
 - No enforcement of fairness  
 
-👉 Result: **Overcrowding, frustration, and inefficient workspace utilization**
+👉 Result: **Overcrowding, inefficiency, and frustration**
 
 ---
 
 ## 💡 The Solution
 
-I designed and built a **complete end-to-end system** that:
+I designed and built a **full end-to-end system** that:
 
 - Digitizes desk reservations across multiple floors  
 - Enforces strict booking and fairness rules  
 - Prevents no-shows through attendance validation  
 - Ensures physical presence using geofencing  
-- Maintains performance at scale through automated data lifecycle management  
+- Maintains performance at scale via automated data lifecycle management  
 
 ---
 
 ## ⚙️ System Overview
 
-The system manages the full lifecycle of desk reservations:
+The system manages the complete lifecycle:
 
 1. Users browse floors and desks  
-2. Users reserve desks based on availability and rules  
-3. System enforces limits and role-based permissions  
+2. Users reserve desks based on rules  
+3. System enforces limits and permissions  
 4. Users confirm attendance via QR + geofencing  
 5. No-shows are automatically marked as **Expired**  
 6. Past reservations are archived daily  
@@ -49,10 +49,9 @@ The system manages the full lifecycle of desk reservations:
 
 ## 📱 Reservation Experience
 
-<p align="center">
-  <img src="screenshots/reservation-app-home-mock.png" width="45%" />
-  <img src="screenshots/reservation-app-section-mock.png" width="45%" />
-</p>
+| | |
+|---|---|
+| <img src="screenshots/reservation-app-home-mock.png" width="100%" /> | <img src="screenshots/reservation-app-section-mock.png" width="100%" /> |
 
 <p align="center"><em>Interactive floor navigation and desk-level reservation interface with real-time availability</em></p>
 
@@ -64,7 +63,7 @@ The system manages the full lifecycle of desk reservations:
   <img src="screenshots/attendance-confirmation-app.png" width="55%" />
 </p>
 
-<p align="center"><em>Lightweight mobile app for confirming attendance using desk ID and geofencing validation</em></p>
+<p align="center"><em>Lightweight mobile app for attendance confirmation using desk ID and geofencing validation</em></p>
 
 ---
 
@@ -73,32 +72,32 @@ The system manages the full lifecycle of desk reservations:
 <p align="center">
 
 🗺️ <strong>Interactive Floor-Based Reservation</strong><br>
-120+ desks across 3 floors, fully digitized with visual availability indicators.
+120+ desks across 3 floors mapped into a fully digital system.
 
 <br><br>
 
 📅 <strong>Smart Reservation Rules</strong><br>
-Active limits, daily limits, and same-day booking constraints enforce fairness.
+Daily limits, active limits, and booking constraints enforce fairness.
 
 <br><br>
 
-👥 <strong>Role-Based Access Logic</strong><br>
-SuperUsers can bypass limits and reserve on behalf of guests.
+👥 <strong>Role-Based Access</strong><br>
+SuperUsers can bypass limits and reserve for guests.
 
 <br><br>
 
 ⏱️ <strong>Attendance Enforcement</strong><br>
-Strict confirmation deadlines (11:00 AM or 1-hour window for same-day bookings).
+Strict confirmation deadlines prevent desk hoarding.
 
 <br><br>
 
 📍 <strong>Geofencing Validation</strong><br>
-Ensures users are physically present using GPS + Haversine distance calculation.
+Ensures users are physically inside the office before confirming.
 
 <br><br>
 
-⚡ <strong>Scalable Data Architecture</strong><br>
-Daily archival prevents SharePoint delegation issues and keeps performance stable.
+⚡ <strong>Scalable Data Design</strong><br>
+Automated archival avoids SharePoint delegation issues.
 
 </p>
 
@@ -110,7 +109,7 @@ Daily archival prevents SharePoint delegation issues and keeps performance stabl
   <img src="diagrams/system-architecture.png" width="85%" />
 </p>
 
-The system consists of:
+**Layers:**
 
 - **Application Layer** → Power Apps (Reservation + Attendance apps)  
 - **Data Layer** → SharePoint lists  
@@ -119,68 +118,52 @@ The system consists of:
 
 ---
 
-## 🧩 Tech Stack
+## 🔄 Reservation Status Lifecycle
 
-| Layer | Technology |
-|------|------------|
-| Frontend | Power Apps |
-| Backend | SharePoint Lists |
-| Automation | Power Automate |
-| Logic | Power Fx |
-| Validation | Geofencing (Haversine Formula) |
-
----
-
-## 🔐 Security & Confidentiality
-
-This project was built in a real organizational environment.
-
-To ensure security:
-
-- No SharePoint screenshots are included  
-- No internal URLs or configurations are exposed  
-- Floor layouts are embedded only within `.msapp` files  
-- No employee or sensitive organizational data is shared  
-
-👉 See: `docs/security-and-confidentiality.md`
+| Status | Meaning |
+|------|--------|
+| Active | Reservation created and pending attendance |
+| Confirmed | Attendance verified successfully |
+| Cancelled | User manually cancelled |
+| Expired | User failed to confirm attendance |
 
 ---
 
-## ⚙️ How It Works (Simplified)
+## 📊 Data Lifecycle Strategy
 
-- Reservation created → **Active**  
-- Attendance confirmed → **Confirmed**  
-- User cancels → **Cancelled**  
-- No confirmation → **Expired**  
-- Daily automation archives all past records  
+To maintain performance and scalability:
 
----
-
-## 📊 Data Lifecycle
-
-- Active reservations → real-time SharePoint list  
-- Historical reservations → archived daily  
-- Ensures:
-  - high performance  
-  - scalability  
-  - clean operational dataset  
+- Active data → stored in `Active_Reservations`  
+- Historical data → moved daily to `Archived_Reservations`  
+- Automated cleanup prevents delegation limits  
 
 👉 See: `docs/data-lifecycle-and-archival.md`
 
 ---
 
+## 🔐 Security & Confidentiality
+
+This repository intentionally excludes sensitive information:
+
+- No SharePoint screenshots  
+- No internal URLs or credentials  
+- No employee data  
+- Floor layouts only exist inside `.msapp` files  
+
+👉 See: `docs/security-and-confidentiality.md`
+
+---
+
 ## 🚀 Why This Project Stands Out
 
-This is not just a Power App.
-
-It demonstrates:
+This is not just a Power Apps project — it demonstrates:
 
 - 🧠 System design thinking  
 - ⚙️ Real-world business rule enforcement  
 - 📉 Performance optimization under platform constraints  
-- 🔐 Security and data governance awareness  
+- 🔐 Security awareness  
 - 📍 Physical validation using geofencing  
-- 📊 Scalable data lifecycle management  
+- 📊 Scalable architecture  
 
 ---
 
@@ -188,7 +171,7 @@ It demonstrates:
 
 - Not fully mobile responsive (optimized for desktop/tablet)  
 - Manual floor mapping  
-- GPS-based geofencing limitations  
+- GPS accuracy limitations  
 - Single-location deployment  
 
 👉 See: `docs/limitations-and-future-improvements.md`
@@ -197,11 +180,23 @@ It demonstrates:
 
 ## 🔮 Future Improvements
 
-- Mobile-first UI redesign  
+- Mobile-first redesign  
 - Dynamic desk configuration  
 - Power BI analytics dashboards  
 - Multi-location support  
 - Advanced geofencing (WiFi / Bluetooth)  
+
+---
+
+## 🧩 Tech Stack
+
+| Layer | Technology |
+|------|------------|
+| Frontend | Power Apps |
+| Backend | SharePoint |
+| Automation | Power Automate |
+| Logic | Power Fx |
+| Validation | Geofencing (Haversine Formula) |
 
 ---
 
@@ -210,22 +205,20 @@ It demonstrates:
 **Adham Elkhouly**
 
 - Analytics Specialist @ Nestlé  
-- Passionate about building systems that solve real-world problems  
-- Focused on scalable systems, automation, and data-driven design  
-
+- Building scalable systems using Power Platform, data, and automation  
 ---
 
 ## 📄 License
 
 This project is licensed under the MIT License.
 
-See the `LICENSE` file for details.
+See the `LICENSE.txt` file for details.
 
 ---
 
 ## ⭐ Final Note
 
-This project was built to solve a **real operational problem**.
+This system was built to solve a **real operational challenge**.
 
 It reflects how I approach engineering:
 
