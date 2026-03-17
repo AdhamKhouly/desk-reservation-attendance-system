@@ -209,7 +209,7 @@ It demonstrates:
 
 **Adham Elkhouly**
 
-- Applied Scientist @ Microsoft  
+- Analytics Specialist @ Nestlé  
 - Passionate about building systems that solve real-world problems  
 - Focused on scalable systems, automation, and data-driven design  
 
