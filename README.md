@@ -223,7 +223,3 @@ See the `LICENSE` file for details.
 ## ⭐ Final Note
 
 This system was built to solve a **real operational challenge**.
-
-It reflects how I approach engineering:
-
-> Not just building features — but designing systems that enforce behavior, scale efficiently, and deliver real impact.
